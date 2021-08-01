@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="{{url_for('static',filename='style3.css')}}" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{url_for('static',filename='favicon.png')}}" />
+
+    <title class="mb-3">Home Price Wizard</title>
+</head>
+
+<body>
+    <div class=" img">
+    </div>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <h2 class="mb-3" style="font-weight: bold;">Property Price Wizzard</h2>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+    <div class="card w-75" style="width: fit-content; margin: auto;">
+
+                        <!-- <h1>Property Price Wizzard</h1> -->
+                
+
+        <div class="card-body">
+            <div class="container text-center">
+            
+                <form class="form" action="{{url_for('prediction')}}" method="POST" autocomplete="off">
+                    <h2>Area (Square Feet)</h2>
+                    <input required aria-required="true" type="number" class="area" id="uiSqft" class="floatLabel"
+                        name="Squareft" placeholder="1000" min="1000" max="50000" />
+        
+                    <h3>BHK (Bedroon, Hall, Kitchen)</h3>
+                    <div class="switch-field text-center">
+                        <div class="allRadio">
+                            <input class="text-center" type="radio" id="radio-bhk-1" name="uiBHK" value="1" />
+                            <label class="text-center" for="radio-bhk-1">1</label>
+                            <input class="text-center" type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked />
+                            <label class="text-center" for="radio-bhk-2">2</label>
+                            <input class="text-center" type="radio" id="radio-bhk-3" name="uiBHK" value="3" />
+                            <label class="text-center" for="radio-bhk-3">3</label>
+                            <input class="text-center" type="radio" id="radio-bhk-4" name="uiBHK" value="4" />
+                            <label class="text-center" for="radio-bhk-4">4</label>
+                            <input class="text-center" type="radio" id="radio-bhk-5" name="uiBHK" value="5" />
+                            <label class="text-center" for="radio-bhk-5">5</label>
+                        </div>
+                    </div>
+                    <h2>Bathrooms</h2>
+                    <div class="switch-field text-center">
+                        <div class="allRadio">
+                            <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1" />
+                            <label for="radio-bath-1">1</label>
+                            <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked />
+                            <label for="radio-bath-2">2</label>
+                            <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3" />
+                            <label for="radio-bath-3">3</label>
+                            <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4" />
+                            <label for="radio-bath-4">4</label>
+                            <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5" />
+                            <label for="radio-bath-5">5</label>
+                        </div>
+                    </div>
+        
+        
+                    <h2>Location</h2>
+                    <div>
+                        <select required aria-required="true" name="sLocation" id="uiLocations" class="location">
+                            <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+                            <option>Saudi Arabia</option>
+                            <option>UAE</option>
+                            <option>Bahrain</option>
+                            <option>Egypt</option>
+                            <option>Abhu dhabi</option>
+                            <option>begur</option>
+                            <option>begur road</option>
+                            <option>bellandur</option>
+                            <option>benson town</option>
+                            <option>bommasandra</option>
+                            <option>chikkabanavar</option>
+                            <option>chikkalasandra</option>
+                            <option>choodasandra</option>
+                            <option>cooke town</option>
+                            <option>cox town</option>
+                            <option>cunningham road</option>
+                            <option>dasanapura</option>
+                            <option>dasarahalli</option>
+                            <option>devanahalli</option>
+                            <option>devarachikkanahalli</option>
+                            <option>yelenahalli</option>
+                            <option>yeshwanthpur</option>
+                        </select>
+                    </div>
+        
+                    <input class="submit" type="submit" value="Estimate Price" />
+                </form>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
